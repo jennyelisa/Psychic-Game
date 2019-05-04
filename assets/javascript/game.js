@@ -4,6 +4,7 @@ var lossesCounter =0;
 var userGuess= [];
 var guessesRemainingCounter = 8;
 var guessedLetter = [];
+var correctLetter = [];
 
 //will need startup() to call at the end. 
 function reset() {
@@ -11,14 +12,6 @@ function reset() {
     winsCounter = 0;
     lossesCounter = 0;
 } 
-//computer has to guess a random letter. math.floormath.random
-var computerGuess = [Math.floor(Math.random() * letterPool.length)];
-for (let i=1; i< letterPool.length; i++); {
-    console.log(computerGuess); //getting a number, turn this into a string?
-    letterPool.push(userGuess);
-}
-//everytime the game restarts the computer should have chosen a new letter
-
 
 
 
@@ -28,30 +21,47 @@ document.onkeyup = function(event) {
     var userGuess =  event.key;
     console.log(userGuess);
     
+ //WHY DOES THE TRY AGAIN ALERT COME UP JUST TO START THE GAME???? 
+
+//computer has to guess a random letter. math.floormath.random
+var computerGuess = [Math.floor(Math.random() * letterPool.length)];
+for (let i=1; i< letterPool.length; i++); {
+    console.log(computerGuess); //getting a number, turn this into a string?
+    computerGuess.push(correctLetter);
+    
+}
+//everytime the game restarts the computer should have chosen a new letter
+
+
+
 
 //users guess matches computer then win count goes up. game should restart
 if (userGuess === computerGuess) {
-    alert('You Got IT!' + guessedLetter);
+    alert('You Got IT!');
     winsCounter ++;
     // document.getElementById("wins").innerHTML = winsCounter;
-    userGuess.push(wins)
+    winsCounter.push(wins);
+    // computerGuess.push(correctLetter);
+    // letterPool.toString(correctLetter);
     reset();
 }
 
-if (guessesRemaining === 0) {
+if ((guessesRemaining === 0) && (userGuess !== computerGuess)) {
     alert('Game Over!');
     lossesCounter ++;
+    guessesRemainingCounter --;
     // document.getElementById("losses").innerHTML = lossesCounter;
-    reset();
+
 } 
 
  else { // tell player to try again, game resets and loss count should go up
     alert('TRY again!');
     lossesCounter ++;
     guessesRemainingCounter --;
-    // document.getElementById("guessesRemaining").innerHTML = guessesRemaining;
+    // guessesRemainingCounter.push("guessesRemaining");
+    // document.getElementById("guessesRemainingCounter").innerHTML = guessesRemainingCounter--;
     reset();
-}
+};
 
 //when out of 8 guesses, I want game to reset (reset guesses, but add a loss)
 
@@ -59,9 +69,10 @@ if (guessesRemaining === 0) {
 
 
 document.getElementById('guessedLetter').textContent = "Your guess so far: " + userGuess;
-document.getElementById('guessesRemaining').textContent = "You have " + guessesRemainingCounter + " left! D:";
-document.getElementById('wins').textContent = "You've WON " + winsCounter + " times! :)";
-document.getElementById('losses').textContent = "You've LOST  " + lossesCounter + " times. :(";
+document.getElementById('wins').textContent = "You have " + winsCounter + " wins! :D";
+document.getElementById('losses').textContent = "You have  " + lossesCounter + " losses! D:";
+document.getElementById('guessesRemaining').textContent = "You have " + guessesRemainingCounter + " guesses left";
+document.getElementById('correct-letter').textContent = "The letter was : " +  computerGuess;
 
 }
 

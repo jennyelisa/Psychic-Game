@@ -1,6 +1,6 @@
 body {
     /* background-color: midnightblue; */
-    background-image: url("/Users/jennyhernandez/Desktop/Psychic-Game/assets/morocco/morocco.png");
+    background-image: url("/Users/jennyhernandez/Desktop/Psychic-Game/assets/memphis-colorful/memphis-colorful.png");
     font-family: 'Playfair Display', serif;
     font-weight: bolder; 
 }
@@ -19,6 +19,7 @@ h1 {
 
 .col-md-6 {
     border: 4px solid mediumaquamarine;
+    
 }
 
 .universe-img {
