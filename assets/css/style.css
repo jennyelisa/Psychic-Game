@@ -19,15 +19,25 @@ h1 {
 
 .col-md-6 {
     border: 4px solid mediumaquamarine;
-    
 }
 
-.universe-img {
-    margin-left: 20%;
-    margin-top: 20%;
-}
-
-.game-content {
+.instructions {
     text-align: center;
+    line-height: 50px;
+    text-transform: uppercase
+}
 
+.neon-img {
+    margin-left: 15%;
+    /* margin-top: 15%; */
+}
+
+.game-text {
+    text-align: center;
+    margin-top: 25%;
+}
+
+#outcome {
+    color: hotpink;
+    font-size: 200%;
 }
