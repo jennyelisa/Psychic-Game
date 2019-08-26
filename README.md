@@ -1,3 +1,2 @@
 # Psychic-Game
-homework 3
-background image was working locally but when I pushed it afte changing the path it still didnt show
+Create psychic game. The computer will choose a letter at random. As the user you will pick a letter until you match the random letter. Of course you only have a certain amount of tries. This app will run in the browser, and feature dynamically updated HTML and CSS powered by your JavaScript code. Good luck!
